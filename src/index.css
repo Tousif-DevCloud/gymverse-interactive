@@ -120,6 +120,10 @@
     @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3;
   }
   
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input bg-background hover:bg-accent hover:text-accent-foreground px-6 py-3;
+  }
+  
   .heading-xl {
     @apply font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
   }
@@ -147,6 +151,30 @@
   .feature-card {
     @apply rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl;
   }
+  
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90;
+  }
+  
+  .image-card {
+    @apply relative overflow-hidden rounded-xl group;
+  }
+  
+  .image-card img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-110;
+  }
+  
+  .image-card .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80;
+  }
+  
+  .parallax-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .parallax-bg {
+    @apply absolute inset-0 w-full h-[120%] -top-[10%] object-cover;
+  }
 }
 
 @layer utilities {
@@ -169,5 +197,9 @@
   
   .mask-gradient-up {
     mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-700 dark:from-primary dark:to-blue-400 bg-clip-text text-transparent;
   }
 }
