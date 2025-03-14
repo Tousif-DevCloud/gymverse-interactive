@@ -156,8 +156,10 @@
     @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90;
   }
   
+  /* Fixed image-card class by removing 'group' from @apply */
   .image-card {
-    @apply relative overflow-hidden rounded-xl group;
+    @apply relative overflow-hidden rounded-xl;
+    @apply group; /* Add group as a separate class */
   }
   
   .image-card img {
